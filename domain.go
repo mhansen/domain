@@ -1,4 +1,4 @@
-package main
+package domain
 
 import (
 	"bytes"
@@ -8,9 +8,6 @@ import (
 	"log"
 	"net/http"
 )
-
-func main() {
-}
 
 type Client struct {
 	c      *http.Client
