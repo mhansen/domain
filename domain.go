@@ -87,7 +87,7 @@ type LocationFilter struct {
 	Suburb                    string `json:"suburb"`
 	PostCode                  string `json:"postCode"`
 	IncludeSurroundingSuburbs bool   `json:"includeSurroundingSuburbs"`
-	SurroundingRadiusInMeters int32  `json:"surroundingRadiusInMeters"`
+	SurroundingRadiusInMeters *int32 `json:"surroundingRadiusInMeters"`
 }
 
 // ResidentialSearchRequest is Domain.SearchService.v2.Model.DomainSearchWebApiV2ModelsSearchParameters
