@@ -93,14 +93,14 @@ type LocationFilter struct {
 // ResidentialSearchRequest is Domain.SearchService.v2.Model.DomainSearchWebApiV2ModelsSearchParameters
 type ResidentialSearchRequest struct {
 	ListingType  string           `json:"listingType"`
-	MinBedrooms  float32          `json:"minBedrooms"`
-	MaxBedrooms  float32          `json:"maxBedrooms"`
-	MinBathrooms float32          `json:"minBathrooms"`
-	MaxBathrooms float32          `json:"maxBathrooms"`
-	MinCarspaces int32            `json:"minCarspaces"`
-	MaxCarspaces int32            `json:"maxCarspaces"`
-	MinPrice     int32            `json:"minPrice"`
-	MaxPrice     int32            `json:"maxPrice"`
+	MinBedrooms  *float32         `json:"minBedrooms"`
+	MaxBedrooms  *float32         `json:"maxBedrooms"`
+	MinBathrooms *float32         `json:"minBathrooms"`
+	MaxBathrooms *float32         `json:"maxBathrooms"`
+	MinCarspaces *int32           `json:"minCarspaces"`
+	MaxCarspaces *int32           `json:"maxCarspaces"`
+	MinPrice     *int32           `json:"minPrice"`
+	MaxPrice     *int32           `json:"maxPrice"`
 	PageSize     int32            `json:"pageSize"`
 	PageNumber   int32            `json:"pageNumber"`
 	Locations    []LocationFilter `json:"locations"`
