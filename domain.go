@@ -60,7 +60,9 @@ func (dc Client) SearchResidentialPage(rsr ResidentialSearchRequest) ([]SearchRe
 
 func (dc Client) SearchResidential(rsr ResidentialSearchRequest) ([]SearchResult, error) {
 	rsr.PageSize = int32(pageSize)
-	rsr.PageNumber = 0
+	// Page numbering starts at 1.
+	// Setting pageNumber to 0, negative and other invalid values will result in receiving the first page.
+	rsr.PageNumber = 1
 	listings := []SearchResult{}
 
 	// Domain returns an error: "Cannot page beyond 1000 records" if you try to.
@@ -131,6 +133,7 @@ type PropertyListing struct {
 	Headline           string          `json:"headline"`
 	SummaryDescription string          `json:"summaryDescription"`
 	HasFloorplan       bool            `json:"hasFloorplan"`
+	AuctionSchedule    AuctionSchedule `json:"auctionSchedule"`
 	Labels             []string        `json:"labels"`
 	ListingSlug        string          `json:"listingSlug"`
 	PropertyDetails    PropertyDetails `json:"propertyDetails"`
